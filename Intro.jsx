@@ -18,7 +18,7 @@ export default function Intro() {
                       Heya, I'm Flyaway.
                     </p>
                     <p className="max-w-xl mt-5 mx-auto text-xl text-gray-400">
-                      I'm from Australia and I enjoy doing web dev. I like learning new things. I own a game site named Astroid, it's purpose is providing games that bypass school firewalls and restrictions
+                      I'm from Australia and I enjoy doing web dev. I like learning new things. I own a Proxy site named InterGalactic and Shadow, it's purpose is providing games and apps and that bypass school firewalls and restrictions
                     </p>
 
                     {/* <div className="mt-5 flex justify-center">
