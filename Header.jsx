@@ -1,61 +1,115 @@
-import React from "react";
-import { HeartIcon } from "@heroicons/react/solid";
-import { motion } from "framer-motion";
+import { Fragment, useState } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
+import LoadingBar from "@weblif/react-top-loading-bar";
+const navigation = [
+  {
+    href: "/",
+    name: "About Me",
+    progress: 25,
+  },
+  {
+    href: "/skills",
+    name: "My Skills",
+    progress: 50,
+  },
+  {
+  
+    href: "/contact",
+    name: "Contact",
+    progress: 100,
+  },
+  {
+    href: "/projects",
+    name: "Projects",
+    progress: 125,
+  },
+  {
+    href: "/Links",
+    name: "Links",
+    progress: 150,
+  },
+];
 
-export default function Intro() {
+export default function Header() {
+  const [progress, setProgress] = useState(0);
   return (
-    <section id="about">
-      <div className="text-gray-400 bg-dark px-10 py-20 body-font">
-        <div className="container px-5 py-10 mx-auto text-center lg:px-40"></div>
-        <motion.div whileHover={{ scale: 1.02 }}>
-          <div className="mx-auto">
-            <div className="mb-20 text-center">
-              <div className="bg-lilbitdark">
-                <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-                  <div className="text-center">
-                    <HeartIcon className="text-gray-400 mx-auto inline-block w-10 mb-4" />
-                    <p className="mt-1 text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
-                      Hey, I'm Nightless.
-                    </p>
-                    <p className="max-w-xl mt-5 mx-auto text-xl text-gray-400">
-                    I am a highly motivated and detail-Proxy developer with a passion for creating efficient and scalable solutions. With a strong background in full-stack web development, I am adept at using various programming languages and frameworks to deliver high-quality products. My expertise includes front-end technologies such as HTML, CSS, and JavaScript, Scss, and EJS and as well as back-end technologies like Node.js and Python. I am committed to continuous learning and staying updated with the latest industry trends to deliver cutting-edge for Everything
+    <Popover className="relative bg-lilbitdark">
+      <LoadingBar
+        color="#ffffff"
+        progress={progress}
+        onLoaderFinished={() => setProgress(99)}
+      />
+      <div className="flex justify-center text-center items-center px-4 py-6 sm:px-6">
+        <div>
+          <span className="sr-only">Nightless</span>
+        </div>
+        <div className="-mr-2 -my-2 md:hidden">
+          <Popover.Button className="bg-lilbitgray rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+            <span className="sr-only">Open menu</span>
+            <MenuIcon className="h-6 w-6" aria-hidden="true" />
+          </Popover.Button>
+        </div>
+        <div className="hidden md:flex md:items-center md:justify-center">
+          <Popover.Group as="nav" className="flex space-x-10">
+            {navigation.map((navlink) => (
+              <Link
+                key={navlink.name}
+                to={navlink.href}
+                onClick={() => setProgress(navlink.progress)}
+                className="text-lg font-medium text-gray-300 hover:text-gray-400"
+              >
+                {navlink.icon} {navlink.name}
+              </Link>
+            ))}
+          </Popover.Group>
+        </div>
+      </div>
 
-</p>
-
-                    {/* <div className="mt-5 flex justify-center">
-                      <div className="bg-dark flex flex-col md:flex-row md:max-w-xl rounded-lg  shadow-lg">
-                        {largeImage && (
-                          <img
-                            width="120px"
-                            draggable={false}
-                            src={largeImage}
-                            alt=""
-                          />
-                        )}
-                        {smallImage && (
-                          <img
-                            width="120px"
-                            draggable={false}
-                            src={smallImage}
-                            alt=""
-                          />
-                        )}
-                      </div>
-                      <div className="bg-dark p-6 flex flex-col justify-start">
-                        <h4 className="main-accent">{name}</h4>
-                        {firstLine && <h5>{firstLine}</h5>}
-                        {secondLine && <h5>{secondLine}</h5>}
-                        {elapsed}
-                      </div>
-                    </div> */}
-
-                  </div>
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        >
+          <div className="rounded-lg shadow-lg bg-lilbitdark divide-y-2 divide-gray-500">
+            <div className="pt-5 pb-6 px-5">
+              <div className="flex items-center justify-between">
+                <div></div>
+                <div className="-mr-2">
+                  <Popover.Button className="bg-lilbitdark rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-inset focus:ring-green-500">
+                    <span className="sr-only">Close menu</span>
+                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
                 </div>
+              </div>
+              <div className="mt-6"></div>
+            </div>
+            <div className="py-6 px-5">
+              <div className="grid grid-cols-2 gap-4">
+                {navigation.map((navlink) => (
+                  <Link
+                    key={navlink.name}
+                    to={navlink.href}
+                    onClick={() => setProgress(navlink.progress)}
+                    className="text-lg font-bold text-gray-300 hover:text-gray-400"
+                  >
+                    {navlink.icon} {navlink.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
   );
 }
