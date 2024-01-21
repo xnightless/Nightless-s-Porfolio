@@ -1,47 +1,27 @@
-html,
 body {
   background-color: #0d0d0d;
-
   color: white;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
-  nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center; /* Center the navigation bar horizontally */
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  li {
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
-a {
-  color: inherit;
-  text-decoration: none;
+nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
-* {
-  box-sizing: border-box;
+nav a {
+  text-decoration: none; /* Remove underline */
+  color: #e4dfdf; /* Set link color */
+  padding: 5px 10px; /* Add padding for better spacing */
 }
 
 main {
@@ -52,6 +32,14 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#content-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .title {
@@ -71,10 +59,38 @@ main {
   font-size: 1.5rem;
 }
 
+section {
+  background-color: #121212;
+  padding: 20px;
+  display: none;
+  width: 80%; /* Adjust width as needed */
+  margin-bottom: 20px;
+}
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+.project-details {
+    display: flex;
     flex-direction: column;
-  }
+    align-items: center;
+    text-align: center;
+}
+
+.project-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    margin-bottom: 10px; /* Add some spacing between the image and project info */
+}
+
+.project-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit; /* Use the default color for links */
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+td { 
+padding-right: 20px; /* Adjust the spacing between columns */ 
 }
