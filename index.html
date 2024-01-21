@@ -1,122 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Replit</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#skills">My Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#links">Links</a></li>
-      </ul>
+      <a href="#" onclick="showContent('about')">About Me</a>
+      <a href="#" onclick="showContent('skills')">My Skills</a>
+      <a href="#" onclick="showContent('contact')">Contact</a>
+      <a href="#" onclick="showContent('projects')">Projects</a>
+      <a href="#" onclick="showContent('links')">Links</a>
     </nav>
+
     <main>
-      <h1 class="title">Heya I'm Phillip</h1>
-      <p class="description">
-        I am a highly motivated and detail-Proxy developer with a passion for
-        creating efficient and scalable solutions. With a strong background in
-        full-stack web development, I am adept at using various programming
-        languages and frameworks to deliver high-quality products. My expertise
-        includes front-end technologies such as HTML, CSS, and JavaScript, Scss,
-        and EJS and as well as back-end technologies like Node.js and Python. I
-        am committed to continuous learning and staying updated with the latest
-        industry trends to deliver cutting-edge for Everything
-      </p>
+      <div id="content-container">
+        <section id="about">
+          <h1 class="title">Yo I'm Nightless</h1>
+          <p class="description">
+            I am a highly motivated and detail-Proxy developer with a passion
+            for creating efficient and scalable solutions. With a strong
+            background in full-stack web development, I am adept at using
+            various programming languages and frameworks to deliver high-quality
+            products. My expertise includes front-end technologies such as HTML,
+            CSS, and JavaScript, Scss, and EJS and as well as back-end
+            technologies like Node.js and Python. I am committed to continuous
+            learning and staying updated with the latest industry trends to
+            deliver cutting-edge for Everything
+          </p>
+          <!-- Add your about me content here -->
+        </section>
 
-      <!-- Skills Table -->
-      <!-- Skills Table -->
-      <table id="skillsTable">
-          <thead>
+        <section id="skills">
+          <center>
+             <h2> My Skills </h2>
+            <table class="min-w-full max-w-1">
+            <thead class="bg-tabledark">
             <tr>
-              <th>Icon</th>
-              <th>Name</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Row 1 -->
+            <th scope="col" class="px-6 py-3 text-xs font-sm text-gray-200 uppercase tracking-wider">
+            </th>
+            <th scope="col" class="px-6 py-3 text-xs font-sm text-gray-200 uppercase tracking-wider">Name
+            </th>
+            <th scope="col" class="px-6 py-3 text-xs font-sm text-gray-200 uppercase tracking-wider">Status
+            </th>
+            </tr></thead><tbody class="bg-etabledaaark">
             <tr>
-              <td><img src="icons/js.png" alt="JavaScript Icon"></td>
-              <td>JavaScript</td>
-              <td>Semi-Fluent</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-html5 fa-3x" aria-hidden="true"></i>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">HTML
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Fluent
+            </td>
             </tr>
-            <!-- Row 2 -->
             <tr>
-              <td><img src="icons/python.png" alt="Python Icon"></td>
-              <td>Python</td>
-              <td>Fluent</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-ubuntu fa-3x" aria-hidden="true"></i>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Scss
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Fluent
+            </td>
             </tr>
-            <!-- Row 3 -->
             <tr>
-              <td><img src="icons/nodejs.png" alt="Node.js Icon"></td>
-              <td>Node.js</td>
-              <td>Semi-Fluent</td>
-            </tr>
-            <!-- Row 4 -->
-            <tr>
-              <td><img src="icons/react.png" alt="React Icon"></td>
-              <td>React</td>
-              <td>Still Learning</td>
-            </tr>
-            <!-- Row 5 -->
-            <tr>
-              <td><img src="icons/java.png" alt="Java Icon"></td>
-              <td>Java</td>
-              <td>Still Learning</td>
-            </tr>
-            <!-- Row 6 -->
-            <tr>
-              <td><img src="icons/scss.png" alt="Scss Icon"></td>
-              <td>Scss</td>
-              <td>Fluent</td>
-            </tr>
-            <!-- Row 7 -->
-            <tr>
-              <td><img src="icons/cpp.png" alt="C++ Icon"></td>
-              <td>C++</td>
-              <td>Still Learning</td>
-            </tr>
-            <!-- Row 8 -->
-            <tr>
-              <td><img src="icons/ejs.png" alt="EJS Icon"></td>
-              <td>EJS</td>
-              <td>Still Learning</td>
-            </tr>
-            <!-- Row 9 -->
-            <tr>
-              <td><img src="icons/css.png" alt="CSS Icon"></td>
-              <td>CSS</td>
-              <td>Fluent</td>
-            </tr>
-            <!-- Row 10 -->
-            <tr>
-              <td><img src="icons/html.png" alt="HTML Icon"></td>
-              <td>HTML</td>
-              <td>Fluent</td>
-            </tr>
-          </tbody>
-        </table>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-css3-alt fa-3x" aria-hidden="true"></i>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">CSS
+                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Semi-Fluent
+              </td>
+              </tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-html5 fa-3x" aria-hidden="true"></i>
 
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">EJS
+                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Still learning
+            </tr>
+            </tr>
+            <tr>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-js fa-3x" aria-hidden="true"></i>
+            </tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-html5 fa-3x" aria-hidden="true"></i>
 
+              </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">JavaScript
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Semi FLuent
+            </tr>
+            </tr>
+            <tr>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-react fa-3x" aria-hidden="true"></i>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">React
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Still learning  </td>          
+              </tr>
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-html5 fa-3x" aria-hidden="true"></i>
 
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Python
+              
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Fluent
+              </tr>  
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300"><i class="fa-brands fa-html5 fa-3x" aria-hidden="true"></i>
+
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">C++
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">Still Learning
+            </tr></tbody>
+            </table>
+
+     
+         
+            
+            <h2> Contact Me </h2>
+      </center>
+      <!-- Add your contact content here -->
+        </section>
+
+        <section id="projects">
+          <div id="project1">
+            <div class="project-details">
+              <img
+                src="projectsicon\css.png"
+                alt="Project 1 Image"
+                class="project-image"
+              />
+              <div class="project-info">
+                <h2 class="title">
+                  <a
+                    href="project1_website_url"
+                    target="_blank"
+                    class="project-link"
+                    >Project 1: Project Name</a
+                  >
+                </h2>
+                <p class="description">
+                  InterGalactic
+
+                  Welcome to InterGalactic, where we provide The best proxys for students in school, bypassing restrictions at no cost, and free of ads! Click here for more info.
+                </p>
+              </div>
+            </div>
+            <!-- You can add more details, images, links, etc. related to Project 1 -->
+          </div>
+
+          <div id="project2">
+            <div id="project1">
+              <div class="project-details">
+                <img
+                  src="projectsicon\css.png"
+                  alt="Project 1 Image"
+                  class="project-image"
+                />
+                <div class="project-info">
+                  <h2 class="title">
+                    <a
+                      href="project1_website_url"
+                      target="_blank"
+                      class="project-link"
+                      >Project 1: Project Name</a
+                    >
+                  </h2>
+                  <p class="description">
+                    Brief description of Project 1 goes here. This can include
+                    details about the technologies used, the purpose of the
+                    project, and any notable achievements or challenges.
+                  </p>
+                </div>
+              </div>
+              <!-- You can add more details, images, links, etc. related to Project 1 -->
+            </div>
+          </div>
+          <!-- Add your projects content here -->
+        </section>
+
+        <section id="links">
+          <h2>Links</h2>
+          <!-- Add your links content here -->
+        </section>
+      </div>
     </main>
-        <script type="module" src="script.js"></script>
-    <!--
-    This script places a badge on your repl's full-browser view back to your repl's cover
-    page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-    teal, blue, blurple, magenta, pink!
-  -->
-    <script
-      src="https://replit.com/public/js/replit-badge-v2.js"
-      theme="dark"
-      position="bottom-right"
-    ></script>
+
+    <footer>&copy; 2024 Your Company Name. All rights reserved.</footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
 
